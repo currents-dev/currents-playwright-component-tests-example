@@ -1,72 +1,34 @@
 # Playwright components testing with Currents
 
-You can check the PW implementation [here](https://playwright.dev/docs/test-components)
+Run [Playwright component](https://playwright.dev/docs/test-components) tests and report the results to [Currents](https://currents.dev)
 
-First run `npm install`
+The project contains simple component tests:
 
-Then run `npm init playwright@latest -- --ct`
+- `src/App.spec.jsx` - a passing test
+- `src/AppFailing.spec.jsx` - a failing test
 
-For running the tests with PW only, you have to use `npm run test-ct` (This runs fine)
+## Setup
 
-For running it with @currents/playwright `npx pwc --key <currentsKey> --project-id <projectId> --ci-build-id hello-currents`
+- First run `npm i`
+- Create an account and project at https://app.currents.dev
+- Grab the following details:
+  - `projectId`
+  - `recordKey`
 
+## Run
 
-The error showing right now when running with @currents/playwright is this:
+Run `pwc` command:
 
-```
-SyntaxError: Unexpected token '<'
+`npx pwc --key <recordKey> --project-id <projectId> --ci-build-id hello-currents`
 
-   at src/App.js:7
+- Explore `playwright-ct.config.js` and note that screenshots, videos and trace are activated
+- Explore more about [CI Build Id](https://currents.dev/readme/guides/cypress-ci-build-id)
 
-   5 |   return (
-   6 |     <div className="App">
->  7 |       <header className="App-header">
-     |                                    ^
-   8 |         <img src={logo} className="App-logo" alt="logo" />
-   9 |         <p>
-  10 |           Edit <code>src/App.js</code> and save to reload.
+Running the command would produce an output that is similar to this:
 
-    at Object.<anonymous> (/Users/miguelangarano/Documents/GitHub/pw-comps/src/App.js:7:36)
-    at Object.<anonymous> (/Users/miguelangarano/Documents/GitHub/pw-comps/src/App.spec.js:4:35)
+The reported results in Currents Dashboard, please note the failed tests:
 
-Error: No tests found
+## Explore `@currents/playwright` integration options
 
-
-
-
-
-
-
-    ERROR  Global error reported by test runner: {
-  message: "Unexpected token '<'",
-  stack: "SyntaxError: Unexpected token '<'\n" +
-    '    at Object.<anonymous> (/Users/miguelangarano/Documents/GitHub/pw-comps/src/App.js:7:36)\n' +
-    '    at Object.<anonymous> (/Users/miguelangarano/Documents/GitHub/pw-comps/src/App.spec.js:4:35)',
-  location: {
-    file: '/Users/miguelangarano/Documents/GitHub/pw-comps/src/App.js',
-    column: 36,
-    line: 7
-  },
-  snippet: '\x1B[90m   at \x1B[39msrc/App.js:7\n' +
-    '\n' +
-    '\x1B[0m \x1B[90m  5 |\x1B[39m   \x1B[36mreturn\x1B[39m (\x1B[0m\n' +
-    '\x1B[0m \x1B[90m  6 |\x1B[39m     \x1B[33m<\x1B[39m\x1B[33mdiv\x1B[39m className\x1B[33m=\x1B[39m\x1B[32m"App"\x1B[39m\x1B[33m>\x1B[39m\x1B[0m\n' +
-    '\x1B[0m\x1B[31m\x1B[1m>\x1B[22m\x1B[39m\x1B[90m  7 |\x1B[39m       \x1B[33m<\x1B[39m\x1B[33mheader\x1B[39m className\x1B[33m=\x1B[39m\x1B[32m"App-header"\x1B[39m\x1B[33m>\x1B[39m\x1B[0m\n' +
-    '\x1B[0m \x1B[90m    |\x1B[39m                                    \x1B[31m\x1B[1m^\x1B[22m\x1B[39m\x1B[0m\n' +
-    '\x1B[0m \x1B[90m  8 |\x1B[39m         \x1B[33m<\x1B[39m\x1B[33mimg\x1B[39m src\x1B[33m=\x1B[39m{logo} className\x1B[33m=\x1B[39m\x1B[32m"App-logo"\x1B[39m alt\x1B[33m=\x1B[39m\x1B[32m"logo"\x1B[39m \x1B[33m/\x1B[39m\x1B[33m>\x1B[39m\x1B[0m\n' +
-    '\x1B[0m \x1B[90m  9 |\x1B[39m         \x1B[33m<\x1B[39m\x1B[33mp\x1B[39m\x1B[33m>\x1B[39m\x1B[0m\n' +
-    '\x1B[0m \x1B[90m 10 |\x1B[39m           \x1B[33mEdit\x1B[39m \x1B[33m<\x1B[39m\x1B[33mcode\x1B[39m\x1B[33m>\x1B[39msrc\x1B[33m/\x1B[39m\x1B[33mApp\x1B[39m\x1B[33m.\x1B[39mjs\x1B[33m<\x1B[39m\x1B[33m/\x1B[39m\x1B[33mcode\x1B[39m\x1B[33m>\x1B[39m and save to reload\x1B[33m.\x1B[39m\x1B[0m'
-}
-    ERROR  Global error reported by test runner: {
-  message: 'No tests found',
-  stack: 'Error: No tests found\n',
-  location: undefined
-
-================================================
-
-    WARNING  No tests detected, skipping upload
-
-================================================
-
-
-```
+Follow our documentation to explore integration options:
+https://currents.dev/readme/integration-with-playwright/currents-playwright
