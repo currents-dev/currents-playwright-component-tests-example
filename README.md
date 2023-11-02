@@ -2,11 +2,11 @@
 
 You can check the PW implementation [here](https://playwright.dev/docs/test-components)
 
-For running the tests you with PW only you have to use
-`npm run test-ct` (This runs fine)
+First run `npm install`
 
-For running it with @currents/playwright
-`npx pwc --key <currentsKey> --project-id <projectId> --ci-build-id hello-currents`
+For running the tests with PW only, you have to use `npm run test-ct` (This runs fine)
+
+For running it with @currents/playwright `npx pwc --key <currentsKey> --project-id <projectId> --ci-build-id hello-currents`
 
 
 The error showing right now when running with @currents/playwright is this:
