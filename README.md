@@ -1,8 +1,8 @@
 # Playwright components testing with Currents
 
-Run [Playwright component](https://playwright.dev/docs/test-components) tests and report the results to [Currents](https://currents.dev)
+Run [Playwright component tests](https://playwright.dev/docs/test-components) and report the results to [Currents](https://currents.dev)
 
-> **Note: November 2023** Playwright support for Components Testing is still experimental
+> **Note November 2023:** Playwright support for Components Testing is still experimental
 
 The project contains simple component tests:
 
