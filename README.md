@@ -4,6 +4,8 @@ You can check the PW implementation [here](https://playwright.dev/docs/test-comp
 
 First run `npm install`
 
+Then run `npm init playwright@latest -- --ct`
+
 For running the tests with PW only, you have to use `npm run test-ct` (This runs fine)
 
 For running it with @currents/playwright `npx pwc --key <currentsKey> --project-id <projectId> --ci-build-id hello-currents`
