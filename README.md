@@ -1,4 +1,4 @@
-# Playwright components testing with Currents
+# Playwright Component testing with Currents
 
 Run [Playwright Component testing](https://playwright.dev/docs/test-components) and report the results to [Currents](https://currents.dev/playwright)
 
@@ -28,7 +28,11 @@ Run `pwc` command:
 
 Running the command would produce an output that is similar to this:
 
-The reported results in Currents Dashboard, please note the failed tests:
+![currents-2023-11-02-15 32 59@2x](https://github.com/currents-dev/currents-playwright-component-tests-example/assets/1637928/d270a5f0-2fb0-41e0-b2b0-667db7d6ee7e)
+
+The results will be reported to Currents Dashboard:
+
+![demo-currents-pw-ct](https://github.com/currents-dev/currents-playwright-component-tests-example/assets/1637928/a7b95888-416d-407e-bf00-833f893765a7)
 
 ## Explore `@currents/playwright` integration options
 
