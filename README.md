@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Playwright components testing with Currents
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+You can check the PW implementation [here](https://playwright.dev/docs/test-components)
 
-## Available Scripts
+For running the tests you with PW only you have to use
+`npm run test-ct` (This runs fine)
 
-In the project directory, you can run:
+For running it with @currents/playwright
+`npx pwc --key <currentsKey> --project-id <projectId> --ci-build-id hello-currents`
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The error showing right now when running with @currents/playwright is this:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+SyntaxError: Unexpected token '<'
 
-### `npm test`
+   at src/App.js:7
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   5 |   return (
+   6 |     <div className="App">
+>  7 |       <header className="App-header">
+     |                                    ^
+   8 |         <img src={logo} className="App-logo" alt="logo" />
+   9 |         <p>
+  10 |           Edit <code>src/App.js</code> and save to reload.
 
-### `npm run build`
+    at Object.<anonymous> (/Users/miguelangarano/Documents/GitHub/pw-comps/src/App.js:7:36)
+    at Object.<anonymous> (/Users/miguelangarano/Documents/GitHub/pw-comps/src/App.spec.js:4:35)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Error: No tests found
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    ERROR  Global error reported by test runner: {
+  message: "Unexpected token '<'",
+  stack: "SyntaxError: Unexpected token '<'\n" +
+    '    at Object.<anonymous> (/Users/miguelangarano/Documents/GitHub/pw-comps/src/App.js:7:36)\n' +
+    '    at Object.<anonymous> (/Users/miguelangarano/Documents/GitHub/pw-comps/src/App.spec.js:4:35)',
+  location: {
+    file: '/Users/miguelangarano/Documents/GitHub/pw-comps/src/App.js',
+    column: 36,
+    line: 7
+  },
+  snippet: '\x1B[90m   at \x1B[39msrc/App.js:7\n' +
+    '\n' +
+    '\x1B[0m \x1B[90m  5 |\x1B[39m   \x1B[36mreturn\x1B[39m (\x1B[0m\n' +
+    '\x1B[0m \x1B[90m  6 |\x1B[39m     \x1B[33m<\x1B[39m\x1B[33mdiv\x1B[39m className\x1B[33m=\x1B[39m\x1B[32m"App"\x1B[39m\x1B[33m>\x1B[39m\x1B[0m\n' +
+    '\x1B[0m\x1B[31m\x1B[1m>\x1B[22m\x1B[39m\x1B[90m  7 |\x1B[39m       \x1B[33m<\x1B[39m\x1B[33mheader\x1B[39m className\x1B[33m=\x1B[39m\x1B[32m"App-header"\x1B[39m\x1B[33m>\x1B[39m\x1B[0m\n' +
+    '\x1B[0m \x1B[90m    |\x1B[39m                                    \x1B[31m\x1B[1m^\x1B[22m\x1B[39m\x1B[0m\n' +
+    '\x1B[0m \x1B[90m  8 |\x1B[39m         \x1B[33m<\x1B[39m\x1B[33mimg\x1B[39m src\x1B[33m=\x1B[39m{logo} className\x1B[33m=\x1B[39m\x1B[32m"App-logo"\x1B[39m alt\x1B[33m=\x1B[39m\x1B[32m"logo"\x1B[39m \x1B[33m/\x1B[39m\x1B[33m>\x1B[39m\x1B[0m\n' +
+    '\x1B[0m \x1B[90m  9 |\x1B[39m         \x1B[33m<\x1B[39m\x1B[33mp\x1B[39m\x1B[33m>\x1B[39m\x1B[0m\n' +
+    '\x1B[0m \x1B[90m 10 |\x1B[39m           \x1B[33mEdit\x1B[39m \x1B[33m<\x1B[39m\x1B[33mcode\x1B[39m\x1B[33m>\x1B[39msrc\x1B[33m/\x1B[39m\x1B[33mApp\x1B[39m\x1B[33m.\x1B[39mjs\x1B[33m<\x1B[39m\x1B[33m/\x1B[39m\x1B[33mcode\x1B[39m\x1B[33m>\x1B[39m and save to reload\x1B[33m.\x1B[39m\x1B[0m'
+}
+    ERROR  Global error reported by test runner: {
+  message: 'No tests found',
+  stack: 'Error: No tests found\n',
+  location: undefined
 
-## Learn More
+================================================
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    WARNING  No tests detected, skipping upload
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+================================================
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
